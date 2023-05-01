@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { JoinModule } from './join/join.module';
 import * as Joi from 'joi';
 
 @Module({
@@ -13,6 +14,7 @@ import * as Joi from 'joi';
         SERVER_PORT: Joi.number().default(3000).required(),
       }),
     }),
+    JoinModule,
   ],
   controllers: [AppController],
   providers: [AppService],
